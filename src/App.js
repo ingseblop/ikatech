@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import { initializeShoes } from './reducers/shoesReducer';
+
+
+import ShowShoes from './components/showShoes';
+import ShoesData from './components/ShoesData';
+import CompletaLook from './components/completeLook';
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(initializeShoes())
+  },[dispatch])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <ShoesData/>
+        <Row>
+          info
+        </Row>
+        <Row>
+          Completa tu look
+        </Row>
+        <Row>
+          <CompletaLook/>
+        </Row>
+        <ShowShoes/>
+        
+      </Container>
     </div>
   );
 }
