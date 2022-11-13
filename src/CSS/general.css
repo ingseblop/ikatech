@@ -1,0 +1,20 @@
+.Talla {
+    background-color: dimgrey;
+    width: 40px;
+    height: 30px;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.Talla :hover{
+    background-color: rgb(206, 206, 206);
+}
+
+.Completa {
+    background-color: burlywood;
+}
+
+Row{
+    margin-bottom: 10px;
+}

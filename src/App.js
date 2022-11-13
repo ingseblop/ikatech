@@ -8,27 +8,27 @@ import { initializeShoes } from './reducers/shoesReducer';
 import ShowShoes from './components/showShoes';
 import ShoesData from './components/ShoesData';
 import CompletaLook from './components/completeLook';
+import Info from './components/info';
+import './CSS/general.css'
 
 function App() {
-  const dispatch = useDispatch()
-
-  useEffect(()=>{
+  const dispatch = useDispatch();
+  console.log('aqui deberia')
+  useEffect(() => {
     dispatch(initializeShoes())
-  },[dispatch])
+  }, [dispatch])
 
   return (
     <div>
       <Container>
         <ShoesData/>
         <Row>
-          info
+          <Info/>
         </Row>
         <Row>
-          Completa tu look
+          <h5 class="Completa">Completa tu Look</h5>
         </Row>
-        <Row>
-          <CompletaLook/>
-        </Row>
+        <CompletaLook/>
         <ShowShoes/>
         
       </Container>
